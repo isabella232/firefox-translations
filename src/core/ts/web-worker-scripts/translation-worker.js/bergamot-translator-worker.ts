@@ -5,7 +5,7 @@
 // Changes will be overwritten on each import!
 
 function loadEmscriptenGlueCode(Module) {
-  var BERGAMOT_VERSION_FULL = "v0.3.1+8b621de";
+  var BERGAMOT_VERSION_FULL = "v0.3.1+d264450";
 
   function GROWABLE_HEAP_I8() {
     if (wasmMemory.buffer != buffer) {
@@ -269,7 +269,7 @@ function loadEmscriptenGlueCode(Module) {
         0,
       ]),
     );
-    var module = new WebAssembly.Module(bytes, { simdWormhole: true });
+    var module = new WebAssembly.Module(bytes);
     var instance = new WebAssembly.Instance(module, {
       e: {
         f: func,
@@ -875,7 +875,7 @@ function loadEmscriptenGlueCode(Module) {
     function instantiateArrayBuffer(receiver) {
       return getBinaryPromise()
         .then(function(binary) {
-          return WebAssembly.instantiate(binary, info, { simdWormhole: true });
+          return WebAssembly.instantiate(binary, info);
         })
         .then(receiver, function(reason) {
           err("failed to asynchronously prepare wasm: " + reason);
@@ -892,9 +892,7 @@ function loadEmscriptenGlueCode(Module) {
         return fetch(wasmBinaryFile, {
           credentials: "same-origin",
         }).then(function(response) {
-          var result = WebAssembly.instantiateStreaming(response, info, {
-            simdWormhole: true,
-          });
+          var result = WebAssembly.instantiateStreaming(response, info);
           return result.then(receiveInstantiatedSource, function(reason) {
             err("wasm streaming compile failed: " + reason);
             err("falling back to ArrayBuffer instantiation");
@@ -923,10 +921,10 @@ function loadEmscriptenGlueCode(Module) {
   var tempI64;
 
   var ASM_CONSTS = {
-    1447872: function() {
+    1455504: function() {
       throw "Canceled!";
     },
-    1448092: function($0, $1) {
+    1455724: function($0, $1) {
       setTimeout(function() {
         _do_emscripten_dispatch_to_thread($0, $1);
       }, 0);
@@ -8723,7 +8721,7 @@ function loadEmscriptenGlueCode(Module) {
       Module["asm"]["dynCall_iiiiiijj"]).apply(null, arguments);
   });
 
-  var _main_thread_futex = (Module["_main_thread_futex"] = 1544688);
+  var _main_thread_futex = (Module["_main_thread_futex"] = 1552320);
 
   Module["addOnPreMain"] = addOnPreMain;
 

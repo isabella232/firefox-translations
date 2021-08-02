@@ -81,7 +81,7 @@ if (targetBrowser === "chrome") {
     `http://localhost:${process.env.REMOTE_DEV_SERVER_PORT}/`,
     ...urlsToOpenOnRun,
   ];
-  defaultConfig.filename = `bergamot-browser-extension-{version}-chrome-cross-browser-ui.zip`;
+  defaultConfig.filename = `brave-translate-browser-extension-{version}-chrome-cross-browser-ui.zip`;
 }
 
 module.exports = defaultConfig;

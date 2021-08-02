@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const packageJson = require("./package.json");
+
 const {
   buildPath,
   targetEnvironment,
@@ -18,14 +19,14 @@ async function generateManifest({ dotEnvPath }) {
     name: `${
       ui === "firefox-infobar-ui"
         ? `Firefox Translations`
-        : `Bergamot Browser Extension`
+        : `Brave Translate Extension`
     }${targetEnvironment !== "production" ? " (DEV)" : ""}`,
     description: "__MSG_extensionDescription__",
     version: `${packageJson.version}`,
     incognito: "spanning", // Share context between private and non-private windows
     default_locale: "en_US",
     background: {
-      scripts: ["commons.js", "background.js"],
+      scripts: ["browser-polyfill.min.js", "commons.js", "background.js"],
     },
     content_scripts: [
       {
@@ -142,6 +143,10 @@ async function generateManifest({ dotEnvPath }) {
   const targetPath = path.join(buildPath, "manifest.json");
   await fs.promises.mkdir(buildPath, { recursive: true });
   await fs.promises.writeFile(targetPath, JSON.stringify(manifest, null, 2));
+  await fs.promises.copyFile(
+    "./node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
+    path.join(buildPath, "browser-polyfill.min.js"),
+  );
 }
 
 module.exports = { generateManifest };

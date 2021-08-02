@@ -18,7 +18,7 @@ import { MainInterfaceInitialProps } from "../index";
 import { TranslationStatus } from "../../../../../core/ts/shared-resources/models/BaseTranslationState";
 import { ExtensionState } from "../../../../../core/ts/shared-resources/models/ExtensionState";
 import { DocumentTranslationState } from "../../../../../core/ts/shared-resources/models/DocumentTranslationState";
-import { config } from "../../../../../core/ts/config";
+// import { config } from "../../../../../core/ts/config";
 import { translateAllFramesInTab } from "../../../../../core/ts/background-scripts/background.js/lib/translateAllFramesInTab";
 
 interface HomeProps {
@@ -313,7 +313,26 @@ export class Home extends React.Component<HomeProps, HomeState> {
             </>
           )}
           <ActionItems actionItems={actionItems} />
-          <div className={"BergamotApp__footer mt-4"}>
+          <div
+            className={"BergamotApp__footer mt-4"}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <span>
+              Powered by the{" "}
+              <a
+                className="bergamot_link"
+                target="_blank"
+                href="https://browser.mt"
+              >
+                Bergamot project
+              </a>
+            </span>
+          </div>
+          {/*          <div className={"BergamotApp__footer mt-4"}>
             <span>
               <a
                 className=""
@@ -332,7 +351,7 @@ export class Home extends React.Component<HomeProps, HomeState> {
                 Feedback
               </a>
             </span>
-          </div>
+          </div>*/}
         </div>
       </div>
     );

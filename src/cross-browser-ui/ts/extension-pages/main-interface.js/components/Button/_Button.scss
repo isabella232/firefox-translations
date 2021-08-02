@@ -8,14 +8,14 @@
   align-items: center;
   border: 1px solid transparent;
   border-radius: 2px;
-  background: var(--color-teal-6);
+  background: #603099;
   color: var(--color-white);
   transition: all 0.2s;
   width: fit-content;
   height: fit-content;
 
   &:hover {
-    background: var(--color-teal-5);
+    background: #9240a4;
   }
 
   &:active {

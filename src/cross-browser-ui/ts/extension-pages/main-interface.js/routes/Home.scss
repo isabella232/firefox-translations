@@ -1,4 +1,17 @@
 .Home {
   height: 100%;
   display: inline-block;
+  box-sizing: content-box;
+}
+
+a.bergamot_link {
+  color: #603099;
+}
+
+a.bergamot_link:hover {
+  color: #7b2c8c;
+}
+
+a.bergamot_link:after {
+  color: #7b2c8c;
 }

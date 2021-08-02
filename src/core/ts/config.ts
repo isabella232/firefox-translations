@@ -8,7 +8,7 @@ export const config = {
     : "https://storage.googleapis.com/bergamot-models-sandbox/0.2.5",
   wasmBinariesBaseUrl: developmentBuild
     ? "http://0.0.0.0:4000/wasm"
-    : "https://storage.googleapis.com/bergamot-models-sandbox/wasm/1",
+    : "https://brave-mt-models-test.s3.us-west-2.amazonaws.com",
   telemetryAppId: process.env.TELEMETRY_APP_ID,
   telemetryDebugMode: developmentBuild,
   extensionBuildId: `${process.env.VERSION}-${process.env.extensionBuildEnvironment}#${process.env.BRANCH}`,

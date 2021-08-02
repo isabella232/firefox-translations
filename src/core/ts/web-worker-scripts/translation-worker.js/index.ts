@@ -49,10 +49,10 @@ const init = async () => {
     type: "wasm-binary",
     url: `${config.wasmBinariesBaseUrl}/${name}`,
     name,
-    size: 6732404,
-    estimatedCompressedSize: 1827872,
+    size: 6736789,
+    estimatedCompressedSize: 1828753,
     expectedSha256Hash:
-      "396d5e4df660f6746af00de961bfe257f7163e0f3aff413146072f93126e1c77",
+      "5ddcd0ea858e26d96ceb9e825743a84c80ca1729d958a3915b042b3e8ad08caf",
   };
 
   const persistFiles = true;

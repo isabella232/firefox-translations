@@ -72,7 +72,7 @@ export class LanguageSwitcher extends React.Component<Props, {}> {
         </span>
         <span className={"LanguageSwitcher__delimiter"}>
           <Icon
-            style={{ width: 24, height: 24, color: "#30d5c8" }}
+            style={{ width: 24, height: 24, color: "#603099" }}
             icon={<BiTransfer onClick={switchLanguages} />}
           />
         </span>

@@ -1,12 +1,15 @@
 .Header {
   text-align: center;
-  padding: 12px;
+  padding: 0px;
   width: 100%;
-  box-sizing: border-box;
+  height: 60px;
+  vertical-align: middle;
+  box-sizing: content-box;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  background: linear-gradient(#603099, #7b2c8c);
 
   & a {
     display: flex;
@@ -22,7 +25,7 @@
     height: 1px;
     bottom: 0;
     left: 0;
-    background: var(--color-neutral-5);
+    background: var(#7b2c8c);
   }
 
   &__back {

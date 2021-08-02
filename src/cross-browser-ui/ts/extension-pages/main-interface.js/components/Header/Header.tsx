@@ -2,7 +2,7 @@ import * as React from "react";
 import Icon from "../Icon/Icon";
 import { useHistory } from "react-router-dom";
 import { BiChevronLeft } from "react-icons/bi";
-import logo from "../../../../../../cross-browser-ui/static/icons/extension-icon.38x38.png";
+import logo from "../../../../../../cross-browser-ui/static/icons/brave-translate-logo.png";
 
 interface Props {
   text?: string;
@@ -29,11 +29,11 @@ const Header = ({ text, allowBack, extra }: Props) => {
       <img
         alt={""}
         src={logo}
-        width={16}
+        width={256}
         className="mr-1"
         style={{ marginBottom: "2px" }}
       />
-      {text ? text : "Bergamot Translate"}
+      {/*{text ? text : "Brave Translate"}*/}
       <span className={"Header__extra"}>{extra ? extra : null}</span>
     </div>
   );
