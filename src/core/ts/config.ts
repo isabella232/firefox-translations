@@ -5,7 +5,7 @@ export const config = {
   sentryDsn: process.env.SENTRY_DSN,
   bergamotModelsBaseUrl: developmentBuild
     ? "http://0.0.0.0:4000/models"
-    : "https://storage.googleapis.com/bergamot-models-sandbox/0.2.5",
+    : "https://brave-mt-models-test.s3.us-west-2.amazonaws.com/models",
   wasmBinariesBaseUrl: developmentBuild
     ? "http://0.0.0.0:4000/wasm"
     : "https://brave-mt-models-test.s3.us-west-2.amazonaws.com",
