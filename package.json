@@ -1,7 +1,7 @@
 {
   "name": "firefox-translations",
   "description": "Firefox Translations",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Brave Software",
   "engines": {
     "npm": "please-use-yarn",
